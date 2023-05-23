@@ -6,6 +6,12 @@ Intuitive Korean steno with Plover. It is a Python dictionary and requires the P
 
 https://youtu.be/Z_MzDxAceqo
 
+I toggled the Easy Korean dictionary by using the Plover dict command plugin: https://github.com/KoiOates/plover_dict_commands
+
+After installing the plugin, define in user.json:
+
+`KRAO*EPB: {PLOVER:TOGGLE_DICT:!easy_korean_steno.py}`
+
 ## How It Works
 
 Plover outputs English/qwerty letters and your computer translates them into Korean letters using the built-in system Korean keyboard layout.
