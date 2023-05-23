@@ -2,6 +2,10 @@
 
 Intuitive Korean steno with Plover. It is a Python dictionary and requires the Plover Python Dictionary plugin (get it from the plugin window in Plover). It works on a Macbook, but it is not tested on Windows or Linux.
 
+## Demo
+
+https://youtu.be/Z_MzDxAceqo
+
 ## How It Works
 
 Plover outputs English/qwerty letters and your computer translates them into Korean letters using the built-in system Korean keyboard layout.
