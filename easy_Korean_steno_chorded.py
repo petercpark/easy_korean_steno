@@ -9,6 +9,7 @@ starting_consonants = {
     "regular": {
         # consonants
         "K": "r",  # ㄱ
+        "TKPW": "r",  # ㄱ
         "TPH": "s",  # ㄴ
         "TK": "e",  # ㄷ
         "R": "f",  # ㄹ
@@ -23,21 +24,23 @@ starting_consonants = {
         "T": "x",  # ㅌ
         "P": "v",  # ㅍ
         "H": "g",  # ㅎ
+        # extra
+        "TH": "E",  # ㄸ
         "": "d",  # ㅇ
     },
     "tense": {
         # tense consonants (add *)
-        "K*": "R",  # ㄲ
-        "TH": "E",  # ㄸ
-        "TH*": "E",  # ㄸ
-        "TK*": "E",  # ㄸ
-        "PW*": "Q",  # ㅃ
-        "SKWR*": "W",  # ㅉ
-        "S*": "T",  # ㅆ
+        "K": "R",  # ㄲ
+        "TKPW": "R",  # ㄲ
+        "TK": "E",  # ㄸ
+        "PW": "Q",  # ㅃ
+        "SKWR": "W",  # ㅉ
+        "S": "T",  # ㅆ
     },
     "special": {
         # adds "y" to vowels
         "KW": "r",  # ㄱ
+        "TKPWR": "r",  # ㄱ
         "TPWH": "s",  # ㄴ
         "TKW": "e",  # ㄷ
         "WR": "f",  # ㄹ
@@ -139,14 +142,14 @@ def lookup(chord):
 
     # get start consonant
     add_y = False
-    if start_consonant in starting_consonants["regular"]:
+    # detect stress
+    if stress == "*" and start_consonant in starting_consonants["tense"]:
+        start_final = starting_consonants["tense"][start_consonant]
+    elif start_consonant in starting_consonants["regular"]:
         start_final = starting_consonants["regular"][start_consonant]
     elif start_consonant in starting_consonants["special"]:
         add_y = True
         start_final = starting_consonants["special"][start_consonant]
-    # detect stress
-    elif start_consonant + stress in starting_consonants["tense"]:
-        start_final = starting_consonants["tense"][start_consonant]
     else:
         raise KeyError
 
