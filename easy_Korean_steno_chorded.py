@@ -55,7 +55,7 @@ starting_consonants = {
         "TKWR": "x",  # ㅌ
         "KPR": "v",  # ㅍ
         "WH": "g",  # ㅎ
-        "STKPWHR": "",
+        "STKPWHR": "",  # empty
     },
 }
 vowels = {
@@ -70,8 +70,13 @@ vowels = {
     # complex vowels
     "AEU": "o",  # ㅐ
     "AE": "p",  # ㅔ
+    # extra/compound
     "E": "ml",  # ㅢ
-    "": "",
+    "OEU": "hl",  # ㅚ
+    "AOU": "nj",  # ㅝ
+    "OU": "hk",  # ㅘ
+    "AOEU": "nl",  # ㅟ
+    "": "",  # empty
 }
 y_vowels = {
     # "y" vowels
@@ -84,7 +89,7 @@ y_vowels = {
     "AEU": "O",  # ㅒ
     "AE": "P",  # ㅖ
     "EU": "l",  # ㅣ
-    "": "",
+    "": "",  # empty
 }
 ending_consonants = {
     # consonants
@@ -110,7 +115,7 @@ ending_consonants = {
     "RPBLG": "W",  # ㅉ
     "RS": "T",  # ㅆ
     "Z": "T",  # ㅆ
-    "": "",  #
+    "": "",  # empty
 }
 
 
@@ -119,9 +124,11 @@ def lookup(chord):
     if len(chord) != 1:
         raise KeyError
     assert len(chord) <= LONGEST_KEY
+
     # backspacing
     if stroke == "*":
-        return "{#right}{#backspace}"
+        return "{#left}{#right}{#backspace}"
+
     # the regex decomposes a stroke into the following groups/variables:
     # start consonants               #STKPWHR
     # vowel 1                                 AO
