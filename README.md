@@ -1,6 +1,10 @@
 # Easy Korean With Steno
 
-Intuitive Korean steno with Plover. You should first learn how to do normal English steno [Art of Chording](https://www.artofchording.com/). It is a Python dictionary and requires the Plover Python Dictionary plugin (get the Plover Python Dictionary plugin from the plugin window in Plover). It works on a Macbook, but it is not tested on Windows or Linux.
+Intuitive Korean steno with Plover. You should first learn how to do normal English steno [Art of Chording](https://www.artofchording.com/). It is a Python dictionary and requires the Plover Python Dictionary plugin (get the Plover Python Dictionary plugin from the plugin window in Plover). 
+
+## Compatibility
+
+`easy_korean_steno` works on Macbook and on GNU/Linux (Xorg) with [IBus](https://github.com/ibus/ibus/wiki) and [ibus-hangul](https://github.com/libhangul/ibus-hangul/). It has not been tested on GNU/Linux with fcitx or on Windows.
 
 ## Demo
 
