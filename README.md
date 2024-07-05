@@ -10,7 +10,7 @@ Toggle the Easy Korean dictionary by using the Plover dict command plugin: https
 
 After installing the plugin, define in user.json:
 
-`KRAO*EPB: {PLOVER:TOGGLE_DICT:!easy_korean_steno.py,!main.json,!user.json}`
+`KRAO*EPB: {PLOVER:TOGGLE_DICT:!easy_korean_steno_chorded.py,!main.json,!user.json}`
 
 ## How It Works
 
